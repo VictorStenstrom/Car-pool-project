@@ -1,4 +1,4 @@
-﻿<section class="hero display-flex align-items-center justify-center">
+﻿<section class="hero hero-flex display-flex align-items-center justify-center" ew-if-key="page-hero">
     <div class="hero-media">
         <ew-list for-key="media">
             @if (This is MediaComponent media)
@@ -10,12 +10,12 @@
             }
         </ew-list>
     </div>
+
     <div class="content-standard display-block color-white text-block-lg align-center slide-from-left" data-inviewanimation>
         <h1 class="size-xl weight-superbold letter-spacing-xxl m-b-1" ew-for="heading"></h1>
         <p class="size-md letter-spacing-lg m-b-5" ew-for="description"></p>
         <div class="size-sm weight-semibold letter-spacing-xl">
-            <a href="#contact-form" class="btn btn-primary btn-light-green m-r-1 m-xlphone-b-3" ew-for-href="link1">@Label("link1")</a>
-            <a class="btn btn-primary btn-light-blue" ew-for-href="link2">@Label("link2")</a>
+            <a href="#contact-form" class="btn btn-primary btn-light-green m-r-1" ew-for-href="link1" ew-if-key="link1">@Label("link1")</a>
         </div>
     </div>
 </section>

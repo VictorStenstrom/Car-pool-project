@@ -1,0 +1,85 @@
+/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="includes/_mediaqueries.scss" /> 
+
+
+/* ==========================================================================
+    Main declaration and builder file. Combines other files and sets global variables.
+
+    The only changes in this file should be to set different variables or add additional @import "xxx.scss" to be included in end result.
+    
+    Use site.scss to write site-specific CSS.
+    Use site_medium.scss/site_mobile.scss to write responsive site-specific CSS.
+    
+    When gulp is run and the sass is compiled, this will be run and the included files will be added to it.
+    The final result end up as css.css (in this folder for dev, in wwwroot/css for prod).
+
+    For css in sub-folders (like union folders), make sure the includes are taken from '../includes/xxx' and not 'includes/xxx'.
+   ========================================================================== */
+
+/*
+ *  Variables to be used when designing
+ *  For new files, get intellisense and recognition by adding this snippet in the top: /// <reference path="css.scss" />
+ */
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Bariol';
+    src: url('../fonts/Bariol_Regular.otf') format('opentype');
+}
+
+$font-main: 'Bariol', sans-serif;                      
+$font-second: 'Karla', sans-serif;
+
+$font-size-main: 1.8rem;
+$line-height-main: 1.5;
+
+/* Colors text */
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-white-opacity: rgba(255,255,255,.7);
+$color-grey-opacity: rgba(48,48,48,.9);
+$color-grey-opacity2: rgba(48,48,48,.3);
+$color-light-green: #69c7a3;
+$color-light-blue: #74B3E0;
+
+// Standard danger/ok colors
+$color-danger: #d9534f;
+$color-ok: #5cb85c;
+
+/* Brand colors */
+$color-main: #fff;
+$color-secondary: #1F2B38;
+$color-gray: #7E7E7E;   
+$color-dark-blue: #1f2b38;
+$color-dark-blue-secondary: #2B2D42;
+$color-light-grey: #EDF0F2;
+
+
+/* Import EZ css library */
+@import "ez/ez";
+
+/* Default CSS files, mainly with default styles for print, sitemap and Forms */
+@import "default/mixins"; /* Helping functions for default CSS behaviour */
+@import "default/animations"; /* Contains animations available that is run on render */
+@import "default/typography"; /* Contains the most commonly used Typo-styles*/
+@import "default/ew-html";
+@import "default/default";
+@import "default/form";
+@import "default/cookieinfo";
+
+/* Components imports, used for all larger components i.e article-list, reference-slider, navigation*/
+//@Import
+
+/* Parts imports, used for all smaller bits n pieces i.e. buttons, icons, symbols*/
+@import "parts/buttons";
+@import "parts/_elements.scss";
+
+/* Sections imports, used for different sections i.e header, footer  */
+@import "sections/header";
+@import "sections/footer";
+@import "sections/_hero.scss";
+@import "sections/_plans-list.scss";
+@import "sections/_rectangular-usp-cards.scss";
+@import "Components/_news.scss";
+@import "Components/_interactive-map.scss";

@@ -1,0 +1,37 @@
+﻿<section class="p-standard display-flex align-items-center justify-center">
+    <div class="content-standard text-block-xxl slide-from-bottom" data-inviewanimation>
+        <p class="m-b-2 color-grey-opacity">@Article.ShowDate?.ToString("dd MMMM yyy")</p>
+        <p class="grey-opacity">@Folder.Label</p>
+        <h3 class="m-b-4 weight-normal" ew-for="heading" ew-if-key="heading"></h3>
+        <div class="m-b-4" ew-if-key="media">
+            <ew-list for-key="media">
+                @if (This is MediaComponent mainMedia)
+                {
+                    <img ew-for-src="$" class="block-media block-media-news" ew-if-not="@mainMedia.IsVideoReference" />
+                    <video ew-if="mainMedia.IsVideoReference" muted autoplay loop preload="auto" class="block-media block-media-news">
+                        <source ew-for-src="$" type="video/mp4" />
+                    </video>
+                }
+            </ew-list>
+        </div>
+        <p class="m-b-2" ew-for="desc" ew-if-key="desc"></p>
+        <ew-list for-key="content">
+            <h4 ew-for="sub-heading" ew-if-key="sub-heading"></h4>
+            <p ew-for="desc" ew-if-key="desc"></p>
+            <div class="m-b-4" ew-if-key="media">
+                <ew-list for-key="media">
+                    @if (This is MediaComponent media)
+                    {
+                        <img ew-for-src="$" class="block-media block-media-news" ew-if-not="@media.IsVideoReference" />
+                        <video ew-if="@media.IsVideoReference" muted autoplay loop preload="auto" class="block-media block-media-news">
+                            <source ew-for-src="$" type="video/mp4" />
+                        </video>
+                    }
+                </ew-list>
+            </div>
+        </ew-list>
+        <div class="m-t-5">
+            <a class="btn-link" href="/news">Ta mig tillbaka</a>
+        </div>
+    </div>
+</section>

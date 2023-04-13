@@ -1,0 +1,13 @@
+﻿.card {
+    border: 1px solid $color-gray;
+    border-radius: 10px;
+
+    &:nth-of-type(odd) {
+        background-color: $color-light-grey;
+    }
+
+    &:hover {
+        box-shadow: 0 0 11px rgba(33,33,33,.3);
+        transition: 0.4s;
+    }
+}

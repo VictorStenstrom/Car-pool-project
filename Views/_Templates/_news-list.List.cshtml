@@ -1,0 +1,15 @@
+﻿<div class="content-standard text-block-xxl news-block slide-from-left" data-inviewanimation>
+    <div class="grid-row col-3 col-lgphone-1">
+        <ew-list>
+            <a ew-for-href="$" class="news-item show" card-category="@Folder.Label">
+                <div class="display-block">
+                    <p class="m-b-2 color-grey-opacity">@Folder.Label</p>
+                    <h4 class="m-b-2 weight-normal">@Article.Label</h4>
+                    <p class="m-b-2 color-grey-opacity">@Article.ShowDate?.ToString("dd MMMM yyy")</p>
+                    <img class="block-media m-b-2" ew-for-src="media" />
+                    <p class="m-b-2" ew-for="desc" cut-by-last-word="100"></p>
+                </div>
+            </a>
+        </ew-list>
+    </div>
+</div>

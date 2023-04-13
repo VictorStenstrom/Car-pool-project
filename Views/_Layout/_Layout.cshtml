@@ -3,20 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Elbilio - Hållbara Mobilitetslösningar | Hyr elbilar smidigt i vår app">
+    <meta name="robots" content="noindex" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-    <script src="~/js/main.js"></script>
+    <link rel="stylesheet" href="~/css/css.min.css" asp-append-version="true" />
+    <link rel="shortcut icon" type="image/png" ew-for-href="$settings/icon" ew-if-key="$settings/icon" />
+    <link rel="apple-touch-icon" type="image/png" ew-for-href="$settings/icon" ew-if-key="$settings/icon" />
+    <link rel="icon" ew-for-href="$settings/ico" type="image/x-icon" ew-if-key="$settings/ico">
 </head>
 <body ew-body-classes>
-    <div id="wrapper">
+    <div id="wrapper" class="container">
         <ew-layout-template pre-body="true" />
         <section id="page">
-            @RenderBody()
+                @RenderBody()
         </section>
         <ew-layout-template post-body="true" />
     </div>
+
+    <script src="~/js/external.min.js" asp-append-version="true"></script>
+    <script src="~/js/final.min.js" asp-append-version="true"></script>
+    @*Google maps api-key goes here*@
 </body>
 </html>

@@ -1,0 +1,250 @@
+﻿$min_width: 320px;
+$max_width: 1600px;
+
+/* Header Sizing Variables */
+/* (Appliable as "size-xxl", "size-xl" etc classes for h1/h2/h3/h4/h5/h6) */
+/*XXL Represents H1*/
+$header_xxl_min: 32px;
+$header_xxl_max: 60px;
+
+/*XL Represents H2*/
+$header_xl_min: 27px;
+$header_xl_max: 50px;
+
+/*LG Represents H3*/
+$header_lg_min: 22px;
+$header_lg_max: 32px;
+
+/*MD Represents H4*/
+$header_md_min: 18px;
+$header_md_max: 20px;
+
+/*SM Represents H5*/
+$header_sm_min: 18px;
+$header_sm_max: 18px;
+
+/*XS Represents H6*/
+$header_xs_min: 16px;
+$header_xs_max: 22px;
+
+/* Body Sizing Variables */
+/* (Appliable as "size-xxl", "size-xl" classes for a/span/a-tags) */
+$p_xxl_min: 50px;
+$p_xxl_max: 50px;
+
+$p_xl_min: 20px;
+$p_xl_max: 24px;
+
+$p_lg_min: 18px;
+$p_lg_max: 20px;
+
+/*MD used as body, p standard-size*/
+$p_md_min: 20px;
+$p_md_max: 22px;
+
+$p_sm_min: 16px;
+$p_sm_max: 18px;
+
+$p_xs_min: 16px;
+$p_xs_max: 16px;
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+
+h1 {
+    @include fluid-type($min_width, $max_width, $header_xxl_min, $header_xxl_max);
+}
+
+h2 {
+    @include fluid-type($min_width, $max_width, $header_xl_min, $header_xl_max);
+}
+
+h3 {
+    @include fluid-type($min_width, $max_width, $header_lg_min, $header_lg_max);
+}
+
+h4 {
+    @include fluid-type($min_width, $max_width, $header_md_min, $header_md_max);
+}
+
+h5 {
+    @include fluid-type($min_width, $max_width, $header_sm_min, $header_sm_max);
+}
+
+h6 {
+    @include fluid-type($min_width, $max_width, $header_xs_min, $header_xs_max);
+}
+
+html, body {
+    font-family: $font-main;
+    @include fluid-type($min_width, $max_width, $p_md_min, $p_md_max);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-main;
+    line-height: 1.3;
+
+
+
+    &.size {
+
+        &-xxl {
+            @include fluid-type($min_width, $max_width, $header_xxl_min, $header_xxl_max);
+        }
+
+        &-xl {
+            @include fluid-type($min_width, $max_width, $header_xl_min, $header_xl_max);
+        }
+
+        &-lg {
+            @include fluid-type($min_width, $max_width, $header_lg_min, $header_lg_max);
+        }
+
+        &-md {
+            @include fluid-type($min_width, $max_width, $header_md_min, $header_md_max);
+        }
+
+        &-sm {
+            @include fluid-type($min_width, $max_width, $header_sm_min, $header_sm_max);
+        }
+
+        &-xs {
+            @include fluid-type($min_width, $max_width, $header_xs_min, $header_xs_max);
+        }
+    }
+}
+
+p, a, span {
+    &.size {
+        &-xxl {
+            @include fluid-type($min_width, $max_width, $p_xxl_min, $p_xxl_max);
+        }
+
+        &-xl {
+            @include fluid-type($min_width, $max_width, $p_xl_min, $p_xl_max);
+        }
+
+        &-lg {
+            @include fluid-type($min_width, $max_width, $p_lg_min, $p_lg_max);
+        }
+
+        &-md {
+            @include fluid-type($min_width, $max_width, $p_md_min, $p_md_max);
+        }
+
+        &-sm {
+            @include fluid-type($min_width, $max_width, $p_sm_min, $p_sm_max);
+        }
+
+        &-xs {
+            @include fluid-type($min_width, $max_width, $p_xs_min, $p_xs_max);
+        }
+    }
+}
+
+.font {
+    &-main {
+        font-family: $font-main;
+    }
+
+    &-second {
+        font-family: $font-second;
+    }
+}
+
+.color {
+    &-gray {
+        color: $color-gray;
+    }
+
+    &-white {
+        color: $color-white;
+    }
+
+    &-black {
+        color: $color-black,
+    }
+
+    &-danger {
+        color: $color-danger;
+    }
+
+    &-success {
+        color: $color-ok;
+    }
+}
+
+.weight {
+    &-thin {
+        font-weight: 100;
+    }
+
+    &-book {
+        font-weight: 200;
+    }
+
+    &-light {
+        font-weight: 300;
+    }
+
+    &-normal {
+        font-weight: 400;
+    }
+
+    &-medium {
+        font-weight: 500;
+    }
+
+    &-semibold {
+        font-weight: 600;
+    }
+
+    &-bold {
+        font-weight: 700;
+    }
+
+    &-bolder {
+        font-weight: 800;
+    }
+
+    &-superbold {
+        font-weight: 900;
+    }
+}
+
+.text {
+    &-uppercase {
+        text-transform: uppercase;
+    }
+
+    &-bold {
+        font-weight: bold;
+    }
+
+    &-unset {
+        text-transform: unset;
+    }
+
+    &-italic {
+        font-style: italic;
+    }
+}

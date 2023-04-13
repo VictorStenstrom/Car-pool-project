@@ -1,0 +1,30 @@
+/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="../css.scss" /> 
+/* Mixins for easy access to default behaviour */
+
+@mixin unstyled-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin standard-bg {
+   background-size:cover;
+   background-repeat:no-repeat;
+   background-position:center;
+}
+
+@mixin absolute-fill {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+@mixin absolute-center {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}

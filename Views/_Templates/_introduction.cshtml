@@ -1,0 +1,21 @@
+﻿<section class="p-standard display-flex align-items-center justify-center slide-from-left" data-inviewanimation ew-if-key="introduction">
+    <div class="content-standard text-block-xxl">
+        <div class="grid-row col-2 col-xlphone-1 gap-md">
+            <div class="display-flex direction-column">
+                <h3 class="m-b-5 weight-normal" ew-for="heading" ew-if-key="heading"></h3>
+                <p class="m-b-5" ew-for="desc-first" ew-if-key="desc-first"></p>
+                <p class="m-b-5" ew-for="desc-second" ew-if-key="desc-second"></p>
+                <p class="m-z" ew-for="desc-third" ew-if-key="desc-third"></p>
+            </div>
+            <div class="display-flex direction-column">
+                <img class="logo logo-center" ew-for-src="media-right" ew-if-key="media-right" />
+            </div>
+        </div>
+        <div class="full-line m-t-5"></div>
+        <ew-list for-key="link" ew-if-key="link">
+            <div class="m-t-5">
+                <a class="btn-link" ew-for-href="link">@Label("link")</a>
+            </div>
+        </ew-list>
+    </div>
+</section>

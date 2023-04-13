@@ -1,0 +1,35 @@
+﻿<section ew-if-key="text-media-block" class="p-standard display-block align-items-center justify-center slide-from-left" data-inviewanimation>
+    <div class="content-standard text-block-xxl">
+        <h3 class="weight-normal align-center" ew-for="heading" ew-if-key="heading"></h3>
+        <div class="grid-row col-2 col-tablet-2 col-lgphone-1" ew-if-key="desc-left">
+            <div class="display-flex direction-column p-4">
+                <p ew-for="desc-left"></p>
+            </div>
+            <div class="display-flex direction-column p-4">
+                <p ew-for="desc-right" ew-if-key="desc-right"></p>
+            </div>
+        </div>
+        <div class="m-b-4">
+            <ew-list for-key="media-upper" ew-if-key="media-upper">
+                @if (This is MediaComponent mediaUpper)
+                {
+                    <img ew-for-src="$" class="block-media" ew-if-not="@mediaUpper.IsVideoReference" />
+                    <video ew-if="@mediaUpper.IsVideoReference" muted autoplay loop preload="auto" class="block-media">
+                        <source ew-for-src="$" type="video/mp4" />
+                    </video>
+                }
+            </ew-list>
+        </div>
+        <ew-list for-key="media-under" ew-if-key="media-under">
+            @if (This is MediaComponent mediaUnder)
+            {
+                <img ew-for-src="$" class="block-media" ew-if-not="@mediaUnder.IsVideoReference" />
+                <video ew-if="@mediaUnder.IsVideoReference" muted autoplay loop preload="auto" class="block-media">
+                    <source ew-for-src="$" type="video/mp4" />
+                </video>
+            }
+        </ew-list>
+        <p class="size-sm m-z" ew-for="desc" ew-if-key="desc"></p>
+        <div class="full-line m-t-5"></div>
+    </div>
+</section>

@@ -1,0 +1,556 @@
+/// <reference path="../css.scss" />
+/* ==========================================================================
+   Cookie container in bottom asking for cookie and integrity consent
+   ========================================================================== */
+
+/* 
+    Standard cookiebar (Old)
+*/
+#ew-cookieinfo-container {
+    width: 450px;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background: linear-gradient(to bottom, #fcfcfc 0%,#f7f7f7 100%);
+    padding: 30px;
+    font-family: $font-main;
+    font-size: 1.4rem;
+
+
+    @include xl-phone {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+
+    &.hidden, .hidden {
+        display: none;
+    }
+
+    span {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            color: #000;
+            margin-top: 15px;
+            display: block;
+            text-decoration: underline;
+            color: #000;
+            transition: all .4s;
+
+            &:hover {
+                color: #000;
+                transition: all .4s;
+            }
+        }
+    }
+
+    #ew-cookieinfo-button-ok {
+        display: block;
+        margin-top: 25px;
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: $font-main;
+        color: #FFF;
+        background: #54aaf0;
+        cursor: pointer;
+        transition: all .4s;
+
+
+        &:hover {
+            background: #76bef5;
+            transition: all .4s;
+        }
+    }
+}
+
+/* 
+    Standard cookiebar
+*/
+#ew-cookiebar-standard {
+    width: 450px;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background: linear-gradient(to bottom, #fcfcfc 0%,#f7f7f7 100%);
+    padding: 30px;
+    font-family: $font-main;
+    font-size: 1.4rem;
+
+    svg {
+        width: 15px;
+        height: 15px;
+
+        .path {
+            fill: #54aaf0;
+        }
+    }
+
+    .powered-by {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &.hidden, .hidden {
+        display: none;
+    }
+
+    span {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            color: #000;
+            margin-top: 15px;
+            display: block;
+            text-decoration: underline;
+            color: #000;
+            transition: all .4s;
+
+            &:hover {
+                color: #000;
+                transition: all .4s;
+            }
+        }
+    }
+
+    #ew-cookieinfo-button-ok {
+        display: block;
+        margin-top: 25px;
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: $font-main;
+        color: #FFF;
+        background: #54aaf0;
+        cursor: pointer;
+        transition: all .4s;
+
+        &:hover {
+            background: #76bef5;
+            transition: all .4s;
+        }
+    }
+
+    @include xl-phone {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+/* 
+    Full cookiebar
+*/
+#ew-cookiebar-full {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 60%;
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    border-radius: 10px;
+    max-width: 1150px;
+
+    > div {
+        background: #212121;
+        border-radius: 10px;
+        position: relative;
+        height: 100%;
+        padding: 5px;
+        box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .25);
+        color: #fff;
+
+        @include tablet {
+            box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .25);
+            overflow: auto;
+            padding: 20px;
+        }
+    }
+
+    a {
+        color: #fff;
+        transition: all .3s ease;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    .text-block {
+        max-width: 60%;
+        max-height: 110px;
+
+        @include tablet {
+            max-width: 100%;
+            margin-left: 30px;
+        }
+
+        .ew {
+            p {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .text-underline {
+                text-decoration: underline;
+            }
+        }
+    }
+    /*
+        The tooltip containing more detailed information about the cookies on the site.
+    */
+    .tooltip {
+        position: relative;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &:hover {
+            .tooltip-content {
+                opacity: 1;
+                visibility: visible;
+                display: block;
+            }
+        }
+
+        .tooltip-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease;
+            position: absolute;
+            top: -325px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @include tablet {
+                opacity: 1;
+                visibility: visible;
+                position: initial;
+                top: initial;
+                left: initial;
+                transform: none;
+                border-collapse: separate;
+                border-radius: 20px;
+            }
+
+            .ew {
+                width: 430px;
+                height: 315px;
+                overflow: auto;
+                border-radius: 7px;
+                background: #212121;
+                color: #fff;
+                box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .25);
+                padding-right: 20px;
+                padding-left: 20px;
+                font-size: 16px;
+
+                @include tablet {
+                    width: 100%;
+                    height: auto;
+                    max-height: 95px;
+                    border-radius: initial;
+                    box-shadow: none;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    color: #212121;
+                    padding: 15px 0 15px 15px;
+                    border-radius: 9px;
+                }
+
+                &:hover {
+                    cursor: text;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 15px;
+                    height: 2px;
+                    background: #FFF;
+                    border-radius: 9px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background: #3eb6e1;
+                    border: 4px solid rgba(0, 0, 0, 0);
+                    background-clip: padding-box;
+                }
+
+                a, a:visited {
+                    @include tablet {
+                        color: #212121;
+                    }
+                }
+
+                p {
+                    @include tablet {
+                        &:nth-child(1) {
+                            margin-top: 0;
+                        }
+
+                        &:nth-last-child(1) {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: -3px;
+                transform: translateX(-50%) rotate(45deg);
+                background: #212121;
+                height: 6px;
+                width: 6px;
+                box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .25);
+
+                @include tablet {
+                    display: none;
+                }
+            }
+        }
+
+        .tooltip-button {
+            padding: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: #000;
+            color: #fff;
+            border: 1px solid transparent;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            height: 25px;
+            width: 25px;
+            transition: all .3s ease;
+
+            @include tablet {
+                display: none;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: #fff;
+                color: #212121;
+                border: 1px solid #000;
+            }
+
+            &:after {
+                content: '?';
+
+                @include tablet {
+                    content: '+ Visa mer..';
+                }
+            }
+
+            @include tablet {
+                background-color: transparent;
+                color: #fff;
+                border: none;
+                width: 100%;
+                height: auto;
+                border-radius: initial;
+                justify-content: flex-start;
+                padding: 0;
+            }
+        }
+    }
+    /*
+        Container for the ew-logo.
+    */
+    .powered-by {
+        display: flex;
+        flex-direction: row;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        svg {
+            width: 15px;
+            height: 15px;
+
+            .path {
+                fill: #fff;
+            }
+        }
+
+        @include tablet {
+            padding: 0px;
+            position: absolute;
+            display: inline;
+        }
+    }
+    /*
+        Container for the active choice and the choices.
+    */
+    .choice-container {
+        padding-right: 5px;
+
+        .cookie-option {
+            button[data-opt-key="none"] {
+                background-color: #000;
+                color: #fff;
+                border: 1px solid transparent;
+
+                &:hover {
+                    background-color: #fff;
+                    color: #000;
+                    border: 1px solid #000;
+                }
+            }
+
+            @include tablet {
+                margin-left: 0;
+            }
+        }
+
+        @include tablet {
+            padding-right: 0;
+        }
+    }
+    /*
+        Container for the active choice. Hidden by default.
+    */
+    #current-choice-container {
+        display: none !important;
+    }
+
+    button {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: $font-main;
+        color: #000;
+        background: #fff;
+        cursor: pointer;
+        transition: all .4s;
+        border: none;
+        border: 1px solid #212121;
+        border-radius: 10px;
+
+        &:hover {
+            color: #fff;
+            background: #000;
+            border: 1px solid #fff;
+            transition: all .4s;
+        }
+
+        @include tablet {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    @include sm {
+        width: 95%;
+        max-width: initial;
+    }
+
+    @include tablet {
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        padding: 0px;
+    }
+}
+
+/*
+    Full cookiebar-button for managing the users choice.
+*/
+#ew-cookiebar-manage {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    line-height: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    transform-style: preserve-3d;
+    transition: all 300ms ease;
+    perspective: 1000px;
+    z-index: 9;
+    animation: slide-from-left .3s ease forwards;
+
+    @include tablet {
+        width: 40px;
+        height: 40px;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        span {
+            opacity: 1;
+            visibility: visible;
+            animation: slide-from-left .3s ease forwards;
+        }
+    }
+
+    button {
+        border-radius: 7px;
+        border: none;
+        background: #45beed;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 0px 2px 2px rgba(#45beed, .2);
+        transition: all .3s ease;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-left: 15px;
+        transform: translateY(-50%);
+        font-size: 15px;
+        background: rgb(241, 241, 241);
+        padding: 7px;
+        border-radius: 7px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: -3px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            background: rgb(241, 241, 241);
+            height: 6px;
+            width: 6px;
+        }
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+
+        .path {
+            fill: #fff;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

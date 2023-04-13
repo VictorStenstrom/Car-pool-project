@@ -1,0 +1,16 @@
+﻿.grid-lines {
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid $color-grey-opacity;
+
+    &:nth-of-type(odd) {
+        background-color: $color-light-grey;
+    }
+}
+
+.heading {
+    margin: 0;
+    padding: 20px 0;
+    color: $color-white;
+    background: $color-dark-blue;
+}

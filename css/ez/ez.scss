@@ -1,0 +1,26 @@
+// EZ-CSS LIBRARY
+// Version 1.8
+
+/* VARIABLES */
+$spacing-xs: 5px; //1
+$spacing-sm: 10px; //2
+$spacing-md: 15px; //3
+$spacing-lg: 20px; //4
+$spacing-xl: 40px; //5
+$spacing-xxl: 90px; //6
+$spacing-xxxl: 120px; //7
+$spacing-z: 0px; //Z
+
+/* Figure heights, percentage based off of width*/
+$landscape-height: 69%; 
+$portrait-height: 120%;
+
+
+/* INCLUDES IMPORTS */
+@import "mediaqueries";
+@import "reset";
+@import "grid";
+@import "containers";
+@import "spacing";
+@import "utilities";
+

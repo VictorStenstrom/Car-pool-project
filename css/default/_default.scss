@@ -1,0 +1,218 @@
+﻿/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="../css.scss" /> 
+
+/* ==========================================================================
+   Default base - Some base settings, sitemap and form
+   ========================================================================== */
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+}
+
+body {
+    font-family: $font-main;
+    font-size: $font-size-main;
+    line-height: $line-height-main;
+    color: $color-black;
+    background-color: $color-main;
+    margin: 0;
+    padding: 0;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+a, button {
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+
+    &:hover, &:focus, &:active {
+        outline: none;
+    }
+}
+
+input {
+    outline: none;
+}
+
+
+
+/* Editor images */
+img.fr-dib {
+    margin: 0px auto;
+    display: block;
+    float: none;
+    vertical-align: top;
+}
+
+img.fr-dib.fr-fil {
+    margin-left: 0;
+}
+
+img.fr-dib.fr-fir {
+    margin-right: 0;
+}
+
+img.fr-dii {
+    display: inline-block;
+    float: none;
+    vertical-align: bottom;
+    margin-left: 0px;
+    margin-right: 0px;
+    /*max-width: calc(100% - (2 * 5px));*/
+}
+
+img.fr-dii.fr-fil {
+    float: left;
+    margin: 0;
+    /*max-width: calc(100% - 5px);*/
+}
+
+img.fr-dii.fr-fir {
+    float: right;
+    margin: 0;
+    /*max-width: calc(100% - 5px);*/
+}
+
+.video-container {
+    position: relative;
+
+    > video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* Media print */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a, a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+        content: "";
+    }
+
+    pre, blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr, img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+
+/* Default sitemap */
+.gensitemap ul {
+    list-style: none;
+    margin: 0; padding: 0;
+
+    li {
+        box-shadow: 0 0 1px rgba(0,0,0,0.3);
+        display: block;
+        float: left;
+        padding: 2%;
+        width: 30.333333333%;
+        margin: 0 1.5% 3% 1.5%;
+        background: #fff;
+
+        li a {
+            font-size: $font_size_main+2;
+            display: block;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        &.last {
+            margin-right: 0;
+        }
+
+        ul {
+            border-top: 1px dotted #dfdfdf;
+            padding-top: 5px;
+            margin-top: 5px;
+
+            ul {
+                border: none;
+                padding-top: 0;
+                margin-top: 0;
+            }
+
+            li {
+                float: none;
+                box-shadow: none;
+                padding: 4px 0;
+                width: auto;
+                margin: 0;
+            }
+
+            ul li {
+                padding-left: 5%;
+            }
+
+            li a {
+                font-size: $font_size_main;
+                margin-bottom: 0;
+                border: none;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.gensitemap-2-col ul li {
+    width: 47%;
+}

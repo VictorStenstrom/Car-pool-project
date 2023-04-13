@@ -3,21 +3,22 @@
    A menu options rendering the menu like other studio view/elements exists, but is not yet set to default.
 *@
 
-<nav>
-    <ul class="mainmenu">
+<nav ew-if="@Model.Nodes" class="@Model.CssClass nav" id="@Model.Options?.ElementId">
+    <ul class="main-menu">
         @foreach (var menu in Model.Nodes)
         {
-            <li ew-active-class="active" ew-active-for="@menu" class="dropdown">
-                <a ew-href="@menu">
+            <li ew-active-class="active" ew-active-for="@menu" class="dropdown @Model.Options?.ItemCssClasses">
+                <a class="size-sm" ew-href="@menu" ew-if="@menu.Children">
                     @menu.Label
                 </a>
-                <span class="dropdown-arrow" ew-if="@menu.Children" aria-label="open submenu">
-                </span>
-                <ul class="submenu" ew-if="@menu.Children">
+                <a class="size-sm" ew-href="@menu" ew-if-not="@menu.Children">
+                    @menu.Label
+                </a>
+                <ul class="submenu dropdown" ew-if="@menu.Children">
                     @foreach (var childNode in menu.Children)
                     {
                         <li ew-active-class="active" ew-active-for="@childNode">
-                            <a ew-href="@childNode">@childNode.Label</a>
+                            <a class="size-sm" ew-href="@childNode">@childNode.Label</a>
                         </li>
                     }
                 </ul>
@@ -25,3 +26,9 @@
         }
     </ul>
 </nav>
+@* Mobile menu trigger-template, JS/CSS for handling it not enabled by default. *@
+<div class="hamburger js-hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>

@@ -1,0 +1,178 @@
+/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="../css.scss" />
+
+header {
+    background-color: $color-dark-blue;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.logotype {
+    line-height: 1;
+    margin-right: 30px;
+
+    img {
+        max-height: 50px;
+        max-width: 140px;
+        object-fit: contain;
+    }
+}
+
+.nav {
+    margin-left: auto;
+    margin-right: 4rem;
+
+    @include tablet {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        width: 100%;
+        min-height: 100vh;
+        background: #2B2D42;
+        padding: 8rem 5rem;
+        transition: all .3s ease;
+    }
+
+    &.open {
+        display: block;
+        transform: translateX(0);
+    }
+}
+
+.main-menu {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    li {
+        a {
+            padding: 10px 0;
+            color: $color-white-opacity;
+
+            &:hover {
+                cursor: pointer;
+                color: $color-light-green;
+            }
+        }
+
+        list-style-type: none;
+        padding: 10px 0;
+
+
+        @include tablet {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        &:not(:last-child) {
+            margin-right: 7rem;
+
+            @include tablet {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.submenu {
+    display: none;
+
+    a {
+        font-size: 14px;
+    }
+
+    &.show {
+        transition: all .3s ease;
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin: 0;
+        padding: 10px;
+        background-color: $color-dark-blue-secondary;
+        box-shadow: 0 0 11px rgba(33,33,33,.3);
+    }
+
+    &.hamburger-submenu {
+        display: block;
+        position: relative;
+        padding: 10px 0;
+        margin: 0;
+        background-color: $color-dark-blue-secondary;
+        box-shadow: none;
+
+        li {
+            margin-bottom: 4px;
+        }
+    }
+
+    &:hover, &.active {
+        &:after {
+            transform: scaleX(1);
+        }
+    }
+
+    .dropdown {
+        margin: 0;
+
+        &:hover {
+            .submenu {
+                opacity: 1;
+                pointer-events: auto !important;
+                transition: all .3s ease;
+            }
+        }
+    }
+}
+
+.hamburger {
+    margin-left: auto;
+    height: 20px;
+    width: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 99;
+
+    @include tablet {
+        display: flex;
+    }
+
+    span {
+        height: 3px;
+        width: 100%;
+        border-radius: 10px;
+        background: $color-light-green;
+        transition: all .3s ease;
+    }
+
+    &.open {
+        span:first-child {
+            transform: rotate(45deg);
+        }
+
+        span:nth-child(2) {
+            display: none;
+        }
+
+        span:last-child {
+            transform: rotate(-45deg);
+        }
+
+        span:first-child, span:last-child {
+            position: absolute;
+            bottom: 50%;
+        }
+    }
+}

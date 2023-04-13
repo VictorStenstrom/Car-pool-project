@@ -1,0 +1,42 @@
+$breakpoint-xl: 1740px;
+$breakpoint-lg: 1600px;
+$breakpoint-md: 1440px;
+$breakpoint-sm: 1200px; /* anvnd ner t.o.m. 1024 ... */
+$breakpoint-tablet: 992px; /* ... / from-: frn 1024 och uppt */
+$breakpoint-md-tablet: 870px; /* anvnd ner t.o.m. 768 ... */
+$breakpoint-sm-tablet: 767px; /* ... / from-: frn 768 och uppt */
+$breakpoint-xl-phone: 680px;
+$breakpoint-lg-phone: 550px; /* anvnd ner t.o.m. 414 (414-550) */
+$breakpoint-md-phone: 413px; /* anvnd ner t.o.m. 375 (375-413) / from-: frn 414 och uppt */
+$breakpoint-sm-phone: 374px; /* anvnd ner t.o.m. 360 (360-374) / from-: frn 375 och uppt */
+$breakpoint-mini: 359px; /* anvnd ner t.o.m. 320 (320-359) / from-: frn 360 och uppt */
+
+@mixin xl { @media (max-width:$breakpoint-xl) { @content; } } 
+@mixin lg { @media (max-width:$breakpoint-lg) { @content; } } 
+@mixin md { @media (max-width:$breakpoint-md) { @content; } } 
+@mixin sm { @media (max-width:$breakpoint-sm) { @content; } } 
+@mixin tablet { @media (max-width:$breakpoint-tablet) { @content; } } 
+@mixin md-tablet { @media (max-width:$breakpoint-md-tablet) { @content; } } 
+@mixin sm-tablet { @media (max-width:$breakpoint-sm-tablet) { @content; } } 
+@mixin xl-phone { @media (max-width:$breakpoint-xl-phone) { @content; } } 
+@mixin lg-phone { @media (max-width:$breakpoint-lg-phone) { @content; } } 
+@mixin md-phone { @media (max-width:$breakpoint-md-phone) { @content; } } 
+@mixin sm-phone { @media (max-width:$breakpoint-sm-phone) { @content; } } 
+@mixin mini-phone { @media (max-width:$breakpoint-mini) { @content; } }
+
+@mixin from-xl { @media (min-width:$breakpoint-xl + 1) { @content; } } 
+@mixin from-lg { @media (min-width:$breakpoint-lg + 1) { @content; } } 
+@mixin from-md { @media (min-width:$breakpoint-md + 1) { @content; } } 
+@mixin from-sm { @media (min-width:$breakpoint-sm + 1) { @content; } } 
+@mixin from-tablet { @media (min-width:$breakpoint-tablet + 1) { @content; } } 
+@mixin from-md-tablet { @media (min-width:$breakpoint-md-tablet + 1) { @content; } } 
+@mixin from-sm-tablet { @media (min-width:$breakpoint-sm-tablet + 1) { @content; } } 
+@mixin from-xl-phone { @media (min-width:$breakpoint-xl-phone + 1) { @content; } } 
+@mixin from-lg-phone { @media (min-width:$breakpoint-lg-phone + 1) { @content; } } 
+@mixin from-md-phone { @media (min-width:$breakpoint-md-phone + 1) { @content; } } 
+@mixin from-sm-phone { @media (min-width:$breakpoint-sm-phone + 1) { @content; } } 
+@mixin from-mini-phone { @media (min-width:$breakpoint-mini + 1) { @content; } }
+
+@mixin up-to($maxwidth) { @media (max-width:#{$maxwidth}) { @content; } }
+@mixin from($maxwidth) { @media (min-width:#{$maxwidth}) { @content; } }
+@mixin between($minwidth, $maxwidth) { @media (min-width:#{$minwidth}) and (max-width:#{$maxwidth}) { @content; } }

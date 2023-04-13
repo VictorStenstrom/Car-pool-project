@@ -1,0 +1,35 @@
+﻿/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="../css.scss" />
+
+
+//Custom useful elements
+
+.bg-wrap {
+    @include absolute-fill;
+    z-index: 0;
+
+    img, video {
+        @include absolute-fill;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.br-line {
+    &:before {
+        position: relative;
+        z-index: 1;
+        content: '';
+        top: -30px;
+        left: -100px;
+        background: red;
+        padding: 1px 480px;
+
+    }
+}
+
+.full-line {
+    width: 100%;
+    background-color: $color-grey-opacity2;
+    height: 1px;
+}

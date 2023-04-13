@@ -1,0 +1,122 @@
+{
+  /*
+     Welcome to glup.config, the configuration file for glup,
+     lines beginning with // are comments here, notation is otherwise json.
+    
+     These values should be relative to the path of this file,
+     includedFiles and filesToWatch follows gulp's wildcard notation, look it up.
+    
+     If css or js jobs is not needed for your project,
+     leave it empty, like: "cssJobs": []
+    
+     GLHF :)
+    
+     Define one or many css jobs
+    */
+  "cssJobs": [
+    {
+      // Main css (css.css)
+      "name": "maincss",
+      "includedFiles": [
+        "css/css.scss"
+      ],
+      "targetFilePath": "wwwroot/css",
+      "targetFileName": "css.min.css",
+      "filesToWatch": [
+        "css/**/*.scss"
+      ],
+      "autoprefixer": {
+        "useCustomSetup": false,
+        "customSetupName": "standardSetup"
+      }
+    }
+  ],
+
+  /* Define one or many js jobs */
+  "jsJobs": [
+    {
+      // Main js (final.min.js)
+      "name": "main",
+      // Used instead of filesToWatch
+      "includedFiles": [
+        "js/externalsphinxly/inviewanimation.1.0.js",
+        "js/default/easyweb.core.1.0.js",
+        "js/components/parallaxit.js",
+        "js/global.js"
+      ],
+      "targetFilePath": "wwwroot/js",
+      "targetFileName": "final.min.js",
+      "transpile": true,
+      "jshint": {
+        "on": false,
+        "ignore": [
+          //example: "js/external/jquery.min.js",
+        ],
+        "useCustomSetup": false,
+        "customSetupName": "standardSetup"
+      }
+    },
+    // External main js
+    {
+      "name": "external",
+      "includedFiles": [
+        "js/external/jquery.min.js",
+        "js/external/jquery.validate.min.js",
+        "js/external/jquery.validate.unobtrusive.min.js"
+      ],
+      "targetFilePath": "wwwroot/js",
+      "targetFileName": "external.min.js"
+    },
+    {
+      // External main js (final.min.js)
+      "name": "polyfills",
+      "includedFiles": [
+        "js/default/easyweb.polyfills.js"
+      ],
+      "targetFilePath": "wwwroot/js",
+      "targetFileName": "polyfills.min.js",
+      "filesToWatch": [
+        "js/default/easyweb.polyfills.js"
+      ]
+    }
+  ],
+
+  /* You can freely choose to name your setups inside jshintSetups
+   what matters is that you use the same name at jsJobs[].jshint.customSetupName */
+  "jshintSetups": {
+    "standardSetup": {
+      "node": false,
+      "browser": true,
+      "devel": true,
+      "bitwise": true,
+      "curly": false,
+      "eqeqeq": true,
+      "latedef": false,
+      "undef": true,
+      "unused": true,
+      "strict": false,
+      "maxcomplexity": 9,
+      "esversion": 5,
+      "globals": {
+        "jQuery": true,
+        "Modernizr": true,
+        "$": false
+      }
+    }
+  },
+
+  /* You can freely choose to name your setups inside autoprefixerSetups
+   what matters is that you use the same name at cssJobs[].autoprefixer.customSetupName*/
+  "autoprefixerSetups": {
+    "standardSetup": {
+      "customBrowsersList": [
+        "> 1%",
+        "IE > 8",
+        "Safari >= 5",
+        "Edge >= 13",
+        "Last 20 Chrome versions",
+        "Last 20 Firefox versions"
+      ]
+    }
+  }
+}

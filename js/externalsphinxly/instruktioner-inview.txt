@@ -1,0 +1,36 @@
+INSTRUKTIONER
+
+	1. 
+		Placera följande i <head>
+		<!--[if !IE]> --><link rel="stylesheet" href="css/inviewanimation.css" type="text/css" /><!-- <![endif]-->
+
+
+	2.
+		Placera följande innan </body>
+		<!--[if !IE]> --><script src="js/inviewanimation.js"></script><!-- <![endif]-->
+
+
+	3.
+		Lägg till attributet data-inviewanimation till alla element som ska animeras. Såhär:
+		<img src="bike.jpg" alt="Bike" data-inviewanimation>
+
+
+	4.
+		Lägg till klasser för att välja animation. Såhär:
+		
+		Nerskalad 0.5x:
+			<img src="bike.jpg" alt="Bike" data-inviewanimation class="transform-anim">
+		
+		Genomskinlighet:
+			<img src="bike.jpg" alt="Bike" data-inviewanimation class="opacity-anim">
+		
+		Fler kombinerade:
+			<img src="bike.jpg" alt="Bike" data-inviewanimation class="opacity-anim transform-anim">
+
+
+
+
+INFO
+
+	Fungerar i alla moderna webbläsare
+	Fungerar inte i IE 7-9 (de stödjer inte css animationer)

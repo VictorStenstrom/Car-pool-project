@@ -1,0 +1,16 @@
+﻿<section class="p-standard display-flex align-items-center justify-center slide-from-left" data-inviewanimation>
+    <div class="content-standard text-block-xxl">
+        <form class="search-box m-auto m-b-4">
+            <input type="text" name="@DefaultQueryString.Search" class="search-field" autocomplete="off" placeholder="Sök efter nyhet">
+        </form>
+        <div class="align-center m-b-5">
+            <div class="btn btn-secondary btn-light-green" data-tag="All">Alla</div>
+            <ew-folders for-key="news-list">
+                <div class="btn btn-secondary btn-light-green" ew-for-data-tag="$label" ew-for="$label"></div>
+            </ew-folders>
+        </div>
+        <div class="full-line m-b-5"></div>
+        <ew-template for-key="news-list" />
+        <div class="return-button m-t-5"></div>
+    </div>
+</section>

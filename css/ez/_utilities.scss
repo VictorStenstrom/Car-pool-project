@@ -1,0 +1,785 @@
+/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="ez.scss" />
+
+//
+// Utilities
+//
+
+//Positioning
+@mixin justify {
+
+    &-start {
+        justify-content: flex-start;
+    }
+
+    &-end {
+        justify-content: flex-end;
+    }
+
+    &-between {
+        justify-content: space-between;
+    }
+
+    &-around {
+        justify-content: space-around;
+    }
+
+    &-center {
+        justify-content: center;
+    }
+}
+
+.justify {
+    @include justify;
+
+    @include xl {
+        &-xl {
+            @include justify;
+        }
+    }
+
+    @include lg {
+        &-lg {
+            @include justify;
+        }
+    }
+
+    @include md {
+        &-md {
+            @include justify;
+        }
+    }
+
+    @include sm {
+        &-sm {
+            @include justify;
+        }
+    }
+
+    @include tablet {
+        &-tablet {
+            @include justify;
+        }
+    }
+
+    @include md-tablet {
+        &-mdtablet {
+            @include justify;
+        }
+    }
+
+    @include sm-tablet {
+        &-smtablet {
+            @include justify;
+        }
+    }
+
+    @include xl-phone {
+        &-xlphone {
+            @include justify;
+        }
+    }
+
+    @include lg-phone {
+        &-lgphone {
+            @include justify;
+        }
+    }
+
+    @include md-phone {
+        &-mdphone {
+            @include justify;
+        }
+    }
+
+    @include sm-phone {
+        &-smphone {
+            @include justify;
+        }
+    }
+
+    @include mini-phone {
+        &-miniphone {
+            @include justify;
+        }
+    }
+}
+
+@mixin align {
+    &-left {
+        text-align: left;
+    }
+
+    &-right {
+        text-align: right;
+    }
+
+    &-center {
+        text-align: center;
+    }
+
+    &-items {
+
+        &-start {
+            align-items: flex-start;
+        }
+
+        &-end {
+            align-items: flex-end;
+        }
+
+        &-center {
+            align-items: center;
+        }
+    }
+}
+
+.align {
+    @include align;
+
+    @include xl {
+        &-xl {
+            @include align;
+        }
+    }
+
+    @include lg {
+        &-lg {
+            @include align;
+        }
+    }
+
+    @include md {
+        &-md {
+            @include align;
+        }
+    }
+
+    @include sm {
+        &-sm {
+            @include align;
+        }
+    }
+
+    @include tablet {
+        &-tablet {
+            @include align;
+        }
+    }
+
+    @include md-tablet {
+        &-mdtablet {
+            @include align;
+        }
+    }
+
+    @include sm-tablet {
+        &-smtablet {
+            @include align;
+        }
+    }
+
+    @include xl-phone {
+        &-xlphone {
+            @include align;
+        }
+    }
+
+    @include lg-phone {
+        &-lgphone {
+            @include align;
+        }
+    }
+
+    @include md-phone {
+        &-mdphone {
+            @include align;
+        }
+    }
+
+    @include sm-phone {
+        &-smphone {
+            @include align;
+        }
+    }
+
+    @include mini-phone {
+        &-miniphone {
+            @include align;
+        }
+    }
+}
+
+
+//Display
+@mixin display {
+    &-flex {
+        display: flex;
+    }
+
+    &-inline-flex {
+        display: inline-flex;
+    }
+
+    &-grid {
+        display: grid;
+    }
+
+    &-block {
+        display: block;
+    }
+
+    &-inline {
+        display: inline-block;
+    }
+}
+
+.display {
+    @include display;
+
+    @include xl {
+        &-xl {
+            @include display;
+        }
+    }
+
+    @include lg {
+        &-lg {
+            @include display;
+        }
+    }
+
+    @include md {
+        &-md {
+            @include display;
+        }
+    }
+
+    @include sm {
+        &-sm {
+            @include display;
+        }
+    }
+
+    @include tablet {
+        &-tablet {
+            @include display;
+        }
+    }
+
+    @include md-tablet {
+        &-mdtablet {
+            @include display;
+        }
+    }
+
+    @include sm-tablet {
+        &-smtablet {
+            @include display;
+        }
+    }
+
+    @include xl-phone {
+        &-xlphone {
+            @include display;
+        }
+    }
+
+    @include lg-phone {
+        &-lgphone {
+            @include display;
+        }
+    }
+
+    @include md-phone {
+        &-mdphone {
+            @include display;
+        }
+    }
+
+    @include sm-phone {
+        &-smphone {
+            @include display;
+        }
+    }
+
+    @include mini-phone {
+        &-mini {
+            @include display;
+        }
+    }
+}
+
+@mixin flex-direction {
+    &-row {
+        flex-direction: row;
+    }
+
+    &-row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    &-column {
+        flex-direction: column;
+    }
+
+    &-column-reverse {
+        flex-direction: column-reverse;
+    }
+}
+
+.direction {
+    @include flex-direction;
+
+    @include xl {
+        &-xl {
+            @include flex-direction;
+        }
+    }
+
+    @include lg {
+        &-lg {
+            @include flex-direction;
+        }
+    }
+
+    @include md {
+        &-md {
+            @include flex-direction;
+        }
+    }
+
+    @include sm {
+        &-sm {
+            @include flex-direction;
+        }
+    }
+
+    @include tablet {
+        &-tablet {
+            @include flex-direction;
+        }
+    }
+
+    @include md-tablet {
+        &-mdtablet {
+            @include flex-direction;
+        }
+    }
+
+    @include sm-tablet {
+        &-smtablet {
+            @include flex-direction;
+        }
+    }
+
+    @include xl-phone {
+        &-xlphone {
+            @include flex-direction;
+        }
+    }
+
+    @include lg-phone {
+        &-lgphone {
+            @include flex-direction;
+        }
+    }
+
+    @include md-phone {
+        &-mdphone {
+            @include flex-direction;
+        }
+    }
+
+    @include sm-phone {
+        &-smphone {
+            @include flex-direction;
+        }
+    }
+
+    @include mini-phone {
+        &-miniphone {
+            @include flex-direction;
+        }
+    }
+
+}
+
+@mixin order {
+    &-1 {
+        order: 1;
+    }
+
+    &-2 {
+        order: 2;
+    }
+
+    &-3 {
+        order: 3;
+    }
+
+    &-4 {
+        order: 4;
+    }
+}
+
+.order {
+    @include order;
+
+    @include xl {
+        &-xl {
+            @include order;
+        }
+    }
+
+    @include lg {
+        &-lg {
+            @include order;
+        }
+    }
+
+    @include md {
+        &-md {
+            @include order;
+        }
+    }
+
+    @include sm {
+        &-sm {
+            @include order;
+        }
+    }
+
+    @include tablet {
+        &-tablet {
+            @include order;
+        }
+    }
+
+    @include md-tablet {
+        &-mdtablet {
+            @include order;
+        }
+    }
+
+    @include sm-tablet {
+        &-smtablet {
+            @include order;
+        }
+    }
+
+    @include xl-phone {
+        &-xlphone {
+            @include order;
+        }
+    }
+
+    @include lg-phone {
+        &-lgphone {
+            @include order;
+        }
+    }
+
+    @include md-phone {
+        &-mdphone {
+            @include order;
+        }
+    }
+
+    @include sm-phone {
+        &-smphone {
+            @include order;
+        }
+    }
+
+    @include mini-phone {
+        &-mini {
+            @include order;
+        }
+    }
+}
+.wrap {
+    flex-wrap: wrap;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
+}
+
+//
+//Responsive visibility
+//
+
+@mixin hide {
+    display: none !important;
+}
+
+.hide {
+    @include hide;
+
+    @include xl {
+        &-xl {
+            @include hide;
+        }
+    }
+
+    @include lg {
+        &-lg {
+            @include hide;
+        }
+    }
+
+    @include md {
+        &-md {
+            @include hide;
+        }
+    }
+
+    @include sm {
+        &-sm {
+            @include hide;
+        }
+    }
+
+    @include tablet {
+        &-tablet {
+            @include hide;
+        }
+    }
+
+    @include md-tablet {
+        &-mdtablet {
+            @include hide;
+        }
+    }
+
+    @include sm-tablet {
+        &-smtablet {
+            @include hide;
+        }
+    }
+
+    @include xl-phone {
+        &-xlphone {
+            @include hide;
+        }
+    }
+
+    @include lg-phone {
+        &-lgphone {
+            @include hide;
+        }
+    }
+
+    @include md-phone {
+        &-mdphone {
+            @include hide;
+        }
+    }
+
+    @include sm-phone {
+        &-smphone {
+            @include hide;
+        }
+    }
+
+    @include mini-phone {
+        &-mini {
+            @include hide;
+        }
+    }
+}
+
+/* POSITIONING */
+.position {
+
+    &-relative {
+        position: relative;
+    }
+
+    &-absolute {
+        position: absolute;
+
+        &-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &-top-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        &-top-center {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &-top-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &-bottom-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &-bottom-center {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &-bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
+//Responsive img/video containers that keeps ratio WIP: Needs testing
+figure {
+    &.square, &.circle {
+        &:before {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+    }
+
+    &.circle {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &.landscape {
+        &:before {
+            content: '';
+            display: block;
+            padding-top: $landscape-height;
+        }
+    }
+
+    &.portrait {
+        &:before {
+            content: '';
+            display: block;
+            padding-top: $portrait-height;
+        }
+    }
+
+    &.video {
+        &:before {
+            content: '';
+            display: block;
+            padding-top: 56.25%;
+        }
+    }
+
+    &.square, &.circle, &.landscape, &.portrait, &.video {
+        width: 100%;
+        position: relative;
+        margin: 0;
+
+        img, video, iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+    }
+}
+
+//Standard settings for background-image
+.bg {
+    &-size {
+        &-contain {
+            background-size: contain;
+        }
+
+        &-cover {
+            background-size: cover;
+        }
+    }
+    
+    &-position {
+        &-center {
+            background-position: center;
+        }
+
+        &-top {
+            background-position: top;
+        }
+
+        &-right {
+            background-position: right;
+        }
+
+        &-bottom {
+            background-position: bottom;
+        }     
+
+        &-left {
+            background-position: left;
+        }   
+    }
+
+    &-repeat {
+        &-no {
+            background-repeat: no-repeat;
+        }
+
+        &-x {
+            background-repeat: repeat-x;
+        }
+
+        &-y {
+            background-repeat: repeat-y;
+        }
+    }
+}
+
+//Standard settings for IMG
+.object {
+    &-fit {
+        &-contain {
+            object-fit: contain;
+        }
+        &-cover {
+            object-fit: cover;
+        }
+    }   
+    &-position {
+        &-center {
+            object-position: center;
+        }
+        
+        &-top {
+            object-position: top;
+        }
+        
+        &-right {
+            object-position: right;
+        }
+
+        &-bottom {
+            object-position: bottom;
+        }
+
+        &-left {
+            object-position: left;
+        }      
+    }
+}

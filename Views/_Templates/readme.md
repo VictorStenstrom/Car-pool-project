@@ -1,1 +1,0 @@
-The _templates folder is for templates that are accessible troughout the project (i.e for all other templates)

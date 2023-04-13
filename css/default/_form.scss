@@ -1,0 +1,104 @@
+﻿/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="../css.scss" /> 
+
+:root {
+    // Set settings for form
+    --input-padding-x: 10px; //Padding Left/Right
+    --input-padding-y: 10px; //Padding Top/Bottom
+    --input-font-size: 1.8rem; //Fontsize for labels & inputs
+}
+
+.pro-form {
+    max-width: 1920px;
+    width: 100%;
+
+    p:nth-of-type(2),
+    p:nth-of-type(5),
+    p:nth-of-type(6),
+    p:nth-of-type(7) {
+        margin: 0;
+    }
+
+    .form-label-group {
+        margin-bottom: 15px;
+        position: relative;
+        height: auto;
+
+        label {
+            position: relative;
+            font-size: var(--input-font-size);
+            pointer-events: none;
+            transition: all 0.20s ease-in-out;
+            width: 100%;
+
+            &.state--active {
+                top: calc(var(--input-padding-y) - 5px);
+                font-size: calc(var(--input-font-size) - 30%);
+                transition: all 0.20s ease-in-out;
+            }
+        }
+
+        input, textarea {
+            font-family: $font-main;
+            background-color: #fafafa;
+            border: 1px solid #ccc;
+            width: 100%;
+            min-height: 50px;
+            padding: var(--input-padding-y) var(--input-padding-x);
+            font-size: var(--input-font-size);
+
+            //Label instead of visible placeholders, fix for all browsers. Accessibility
+            &::placeholder {
+                color: transparent;
+            }
+
+            &:focus {
+                outline: auto;
+            }
+        }
+
+        input {
+            &.input-validation-error {
+                border-bottom: 2px solid $color-danger;
+            }
+            //Label instead of visible placeholders, fix for all browsers. Accessibility
+            &::ms-input-placeholder, &::webkit-input-placeholder, &::moz-input-placeholder {
+                color: transparent;
+            }
+        }
+
+        textarea {
+            min-height: 140px;
+            padding-top: calc(var(--input-padding-y) + 7px);
+            resize: none;
+
+            &:focus {
+                outline: auto;
+            }
+            //Label instead of visible placeholders, fix for all browsers. Accessibility
+            &::ms-textarea-placeholder, &::webkit-textarea-placeholder, &::moz-textarea-placeholder {
+                color: transparent;
+            }
+        }
+    }
+
+    .formcaptcha2, .formfield {
+        display: none;
+    }
+    //Validation
+    .field-validation-error {
+        color: red;
+        font-size: calc(var(--input-font-size) - 40%);
+        position: absolute;
+        right: 10px;
+        top: var(--input-padding-y);
+        display: block;
+
+        @include lg-phone {
+            font-size: calc(var(--input-font-size) - 50%);
+            top: calc(var(--input-padding-y) - 10px);
+        }
+    }
+}
+
+

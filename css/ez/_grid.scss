@@ -1,0 +1,174 @@
+/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="ez.scss" />
+
+body {
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.grid-row {
+    display: grid;
+    gap: 40px;
+    width: 100%;
+
+    &-sm-gap {
+        gap: 5px;
+    }
+
+    &-no-gap {
+        gap: 0;
+    }
+
+    &-sm {
+        width: 50%;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+@mixin cols {
+    &-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    &-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    &-24 {
+        width: 100%;
+    }
+}
+
+.col {
+    flex: 1;
+
+    @include cols;
+}
+
+
+@include xl {
+
+    .col {
+        &-xl {
+            @include cols;
+        }
+    }
+}
+
+@include lg {
+
+    .col {
+        &-lg {
+            @include cols;
+        }
+    }
+}
+
+@include md {
+    .col {
+        &-md {
+            @include cols;
+        }
+    }
+}
+
+@include sm {
+    .col {
+        &-sm {
+            @include cols;
+        }
+    }
+}
+
+@include tablet {
+    .col {
+        &-tablet {
+            @include cols;
+        }
+    }
+}
+
+@include md-tablet {
+    .col {
+        &-mdtablet {
+            @include cols;
+        }
+    }
+}
+
+@include sm-tablet {
+    .col {
+        &-smtablet {
+            @include cols;
+        }
+    }
+}
+
+@include xl-phone {
+    .col {
+        &-xlphone {
+            @include cols;
+        }
+    }
+}
+
+@include lg-phone {
+    .col {
+        &-lgphone {
+            @include cols;
+        }
+    }
+}
+
+@include md-phone {
+    .col {
+        &-mdphone {
+            @include cols;
+        }
+    }
+}
+
+@include sm-phone {
+    .col {
+        &-smphone {
+            @include cols;
+        }
+    }
+}
+
+@include mini-phone {
+    .col {
+        &-miniphone {
+            @include cols;
+        }
+    }
+}

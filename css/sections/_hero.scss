@@ -1,0 +1,64 @@
+﻿/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="../css.scss" />
+
+.hero {
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &.hide {
+        display: none;
+    }
+
+    &-flex {
+        height: 80vh;
+    }
+
+    &-media {
+        display: flex;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        animation: fade-in 1s ease forwards;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(20,39,57,.55);
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+        }
+
+        &_bg {
+            @include standard-bg;
+            height: 100%;
+            flex: 1;
+
+            @include tablet {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+
+        video {
+            object-fit: cover;
+        }
+
+        &:has(.flex-media-image):has(.flex-media-video) video {
+            width: 50%;
+        }
+    }
+}

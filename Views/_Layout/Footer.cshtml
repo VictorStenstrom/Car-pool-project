@@ -1,18 +1,25 @@
 ﻿<footer>
-    <div class="inner">
-        <ew-template />
-        <div>
-            <h4>@SiteContext.Office.Label</h4>
-            <address>
-                <span>@SiteContext.Office.Address</span>
-                <span>@SiteContext.Office.City</span>
-                <span><a href="mailto:@SiteContext.Office.Email">@SiteContext.Office.Email</a></span>
-                <span>@SiteContext.Office.Phone</span>
-            </address>
+    <div class="content-standard display-block align-items-center justify-center align-center text-block-xs">
+        <div class="social-logo m-b-3">
+            <a ew-for-href="link1">
+                <img ew-for-src="logo1" />
+            </a>
+            <a ew-for-href="link2">
+                <img ew-for-src="logo2" />
+            </a>
+            <a ew-for-href="link3">
+                <img ew-for-src="logo3" />
+            </a>
+            <a ew-for-href="link4">
+                <img ew-for-src="logo4" />
+            </a>
         </div>
 
-        <div class="bottom-footer">
-            <div class="ew-copyright">&copy; @DateTime.Now.Year - @SiteContext.Office.Label</div>
-        </div>
+        <address>
+            <div class="weight-bolder">@SiteContext.Office.Label</div>
+            <div>@SiteContext.Office.Address</div>
+            <div>@SiteContext.Office.PostalCode @SiteContext.Office.City</div>
+        </address>
+        <div>&copy; @DateTime.Now.Year - Victor Stenström</div>
     </div>
 </footer>

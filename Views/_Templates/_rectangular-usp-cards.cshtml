@@ -1,0 +1,28 @@
+﻿<section class="p-standard display-flex align-items-center justify-center slide-from-left" data-inviewanimation>
+    <div class="content-standard text-block-xxl">
+        <h3 class="align-center letter-spacing-xxxl" ew-for="heading"></h3>
+        <div class="grid-row col-3 col-tablet-3 col-lgphone-1" ew-list="card">
+            <div class="card display-flex direction-column p-4">
+                <div class="display-flex">
+                    <img class="m-r-1" style="max-height: 24px;" ew-for-src="heading-icon"></>
+                    <h4 class="weight-superbold m-b-3" ew-for="heading"></h4>
+                </div>
+                <p class="size-xs m-b-2 color-grey-opacity" ew-for="sub-heading"></p>
+                <div class="m-b-3" ew-list="desc-section">
+                    <div class="display-flex">
+                        <div class="m-r-2">
+                            <partial name="../Svgs/_checklogo.cshtml" />
+                        </div>
+                        <div class="display-block">
+                            <p class="m-z" ew-for="desc"></p>
+                            <p class="size-xs m-b-1 color-grey-opacity" style="line-height: 1;" ew-for="sub-desc"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-t-auto">
+                    <p class="size-xs color-grey-opacity m-z" ew-for="category-desc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

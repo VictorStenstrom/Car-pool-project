@@ -1,0 +1,250 @@
+/* ADD THIS LINE UNDER IN ALL FILES YOU WANT TO REACH VARIABLES AND MIXINS EASY */
+/// <reference path="standardize.scss" />
+
+section {
+
+    &.m {
+        &-standard {
+            margin: 80px 0;
+
+            @include md-tablet {
+                margin: 60px 0;
+            }
+
+            @include lg-phone {
+                margin: 50px 0;
+            }
+        }
+
+        &-small {
+            margin: 60px 0;
+
+            @include md-tablet {
+                margin: 40px 0;
+            }
+        }
+    }
+
+    &.p {
+        &-standard {
+            padding: 100px 0;
+
+            @include md-tablet {
+                padding: 60px 0;
+            }
+
+            @include lg-phone {
+                padding: 50px 0;
+            }
+        }
+
+        &-small {
+            padding: 90px 0;
+
+            @include md-tablet {
+                padding: 40px 0;
+            }
+        }
+    }
+
+    .block-media {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+
+        &-news {
+            max-height: 50vh;
+        }
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+
+        &-sm {
+            max-width: 150px;
+
+            @include xl-phone {
+                max-width: 100px;
+            }
+        }
+
+        @include xl-phone {
+            max-width: 160px;
+        }
+
+        &-center {
+            margin: auto;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            transition: transform .2s;
+        }
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+    .color {
+        &-light-green {
+            color: $color-light-green;
+        }
+
+        &-gray {
+            color: $color-gray;
+        }
+
+        &-grey-opacity {
+            color: $color-grey-opacity;
+        }
+
+        &-white-opacity {
+            color: $color-white-opacity;
+        }
+    }
+
+    .bg-color {
+
+        &-dark-grey {
+            border: 1px #707070;
+            background-color: rgba(181, 181, 181, 0.3);
+        }
+
+        &-dark-blue {
+            background-color: $color-dark-blue;
+            color: $color-white;
+        }
+    }
+
+    &.fullscreen {
+        min-height: calc(100vh + 40px);
+        width: 100%;
+    }
+}
+//Standard containers
+.content {
+    &-full {
+        width: 100%;
+    }
+
+    &-wide {
+        width: 100%;
+        max-width: 1900px;
+        margin: 0 auto;
+    }
+
+    &-standard {
+        width: 100%;
+        max-width: 1850px;
+        margin: 0 auto;
+    }
+
+    &-small {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+    //Standard padding for content-containers
+    &-wide, &-standard, &-small, &-mini {
+        padding: 0 40px;
+
+        @include tablet {
+            padding: 0 30px;
+        }
+
+        @include lg-phone {
+            padding: 0 25px;
+        }
+    }
+}
+
+.letter-spacing {
+
+    &-sm {
+        letter-spacing: 0.6px;
+    }
+
+    &-md {
+        letter-spacing: 0.19px;
+    }
+
+    &-lg {
+        letter-spacing: 1px;
+    }
+
+    &-xl {
+        letter-spacing: 2px;
+    }
+
+    &-xxl {
+        letter-spacing: 4px;
+    }
+
+    &-xxxl {
+        letter-spacing: 5px;
+    }
+}
+
+.text-block {
+    position: relative;
+    z-index: 1;
+
+    h1, h2, h3, p {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &-xxl {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    &-xl {
+        width: 100%;
+        max-width: 850px;
+    }
+
+    &-lg {
+        width: 100%;
+        max-width: 750px;
+    }
+
+    &-md {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    &-sm {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    &-xs {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    &-xxs {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    &-center {
+        margin: 0 auto;
+    }
+
+    &-xxl, &-xl, &-lg, &-md, &-sm, &-xs, &-xxs {
+        position: relative;
+        z-index: 1;
+
+        h1, h2, h3, p {
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}

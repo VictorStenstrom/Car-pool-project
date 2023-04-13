@@ -3,5 +3,9 @@
   "NewsletterEmailText": "Email",
   "NewsletterButtonText": "Join",
   "NotFound404_Label": "404 - Not found",
-  "NotFound404_Content": "The requested content was not found."
+  "NotFound404_Content": "The requested content was not found.",
+  "Skicka": "Skicka",
+  "CookieInformation": "Den här webbplatsen använder cookies för att förbättra din användarupplevelse. Genom att fortsätta använda webbplatsen samtycker du till att cookies används.",
+  "CookieMoreInformation": "Vår integritetspolicy",
+  "CookieAccept": "Ok!"
 }
